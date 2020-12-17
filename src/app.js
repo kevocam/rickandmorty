@@ -15,12 +15,22 @@ const renderPerson =(data)=>{
 ` 
 card.appendChild(info)
 }
+
+async function getData(url){
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data)
+}
+
+getData("https://pokeapi.co/api/v2/pokemon/25")
+
 const getPerson = () => {
-    fetch("https://rickandmortyapi.com/api/character/?page=2")
+    fetch("https://rickandmortyapi.com/api/character/?page=1")
     .then(data => data.json())
     .then(result => {
         for(let i=0; i<result.results.length;i++){
             renderPerson(result.results[i]);
+            console.log(result.results[i])
         }  
        
     })

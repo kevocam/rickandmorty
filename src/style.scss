@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.1%;
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card{
+    border:1px solid green;
+    padding:10px;
+}
+main{
+    padding:5%;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.container{
+    display:flex;
+    grid-template-columns: repeat(auto-fit, 200px);
+    justify-content: center;
+    box-sizing: border-box;
+    gap:1rem;
+}
