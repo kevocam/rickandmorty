@@ -7,6 +7,9 @@
 
 html {
   font-size: 62.1%;
+  background: -webkit-gradient(linear, left top, right top, from(#573280), to(#8f94fb));
+  background: linear-gradient(to right, #573280, #8f94fb);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 header {
@@ -27,8 +30,71 @@ header {
 }
 
 .card {
-  border: 1px solid green;
+  border: 2px solid #23022E;
   padding: 10px;
+  border-radius: 10px;
+  max-width: 340px;
+}
+
+.card--img img {
+  width: 100%;
+}
+
+.card--name {
+  font-size: 1.9rem;
+  color: white;
+}
+
+.card--name a {
+  text-decoration: none;
+  font-size: 2.1rem;
+  color: #23022E;
+  font-weight: bold;
+}
+
+.card--details {
+  color: #ADA8B6;
+  font-size: 1.4rem;
+}
+
+.card--details ul {
+  list-style: none;
+}
+
+.hero {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero--img {
+  width: 50%;
+  max-width: 450px;
+}
+
+.hero--img img {
+  width: 100%;
+}
+
+.hero--about {
+  width: 50%;
+  font-size: 2.1rem;
+}
+
+.hero--about h2 {
+  color: #573280;
+}
+
+.hero--about p {
+  color: #ADA8B6;
 }
 
 main {
@@ -54,5 +120,30 @@ main {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   gap: 1rem;
+}
+
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#more {
+  border: 2px solid #573280;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 2.2rem;
+  background-color: #ADA8B6;
+  color: #23022E;
+  font-weight: bold;
+}
+
+#more:hover {
+  cursor: pointer;
+  background-color: #573280;
+  color: #8f94fb;
 }
 /*# sourceMappingURL=style.css.map */

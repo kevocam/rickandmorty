@@ -1,5 +1,7 @@
 const card = document.querySelector(".container")
 
+
+
 const renderPerson =(data)=>{
     let info= document.createElement("div")
     
@@ -9,33 +11,36 @@ const renderPerson =(data)=>{
             <img src="${data.image}" alt="${data.name}">
         </div>
         <div class="card--name">
-               <a href=${data.url}><p>${data.name}</p> </a>
+               <a href=${data.url}>${data.name} </a>
         </div>
+            <div class="card--details">
+                <ul>
+                    <li>
+                    Especie: <span>${data.species}</span>
+                    </li>
+                    <li>
+                    Ubicación: <span>${data.location.name}</span>
+                    </li>
+                </ul>
+            </div>
         </div> 
 ` 
 card.appendChild(info)
 }
-
-async function getData(url){
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data)
-}
-
-getData("https://pokeapi.co/api/v2/pokemon/25")
-
-const getPerson = () => {
-    fetch("https://rickandmortyapi.com/api/character/?page=1")
+const getPerson = (page) => {
+    fetch(`https://rickandmortyapi.com/api/character?page=${page}`)
     .then(data => data.json())
     .then(result => {
         for(let i=0; i<result.results.length;i++){
             renderPerson(result.results[i]);
-            console.log(result.results[i])
-        }  
-       
+          /*   console.log(result.info.next) */
+        }         
     })
     .catch(error => console.log(error))
 }
-
-getPerson();
-
+getPerson(1)
+let flag=2;
+const button = more.addEventListener("click", () => {
+    getPerson(flag);
+    flag++;
+})
